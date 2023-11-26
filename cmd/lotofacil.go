@@ -1,6 +1,5 @@
 /*
-Copyright © 2023 NAME HERE <EMAIL ADDRESS>
-
+Copyright © 2023 Alexandre Guerra <agmguerra@gmail.com>
 */
 package cmd
 
@@ -13,13 +12,9 @@ import (
 // lotofacilCmd represents the lotofacil command
 var lotofacilCmd = &cobra.Command{
 	Use:   "lotofacil",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "Generate randomic numbers like card for Brazillian Lotofácil lottery game",
+	Long: `Lotofacil is a Brazilian lottry game. Each card has from 15 to 20 numbers. Players can win 
+a money prize with 11, 12, 13, 14, 15 matching numbers.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("lotofacil called")
 	},
