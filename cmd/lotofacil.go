@@ -6,10 +6,10 @@ package cmd
 import (
 	"fmt"
 
+	"github.com/agmguerra/lotericacli/lotofacil"
 	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
 )
-
-var NumCards int
 
 // lotofacilCmd represents the lotofacil command
 var lotofacilCmd = &cobra.Command{
@@ -18,7 +18,8 @@ var lotofacilCmd = &cobra.Command{
 	Long: `Lotofacil is a Brazilian lottry game. Each card has from 15 to 20 numbers. Players can win 
 a money prize with 11, 12, 13, 14, 15 matching numbers.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("lotofacil called")
+		cards := lotofacil.GetLotofacilCards(viper.GetInt("numcards"))
+		fmt.Println(cards)
 	},
 }
 

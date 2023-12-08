@@ -7,7 +7,10 @@ import (
 	"os"
 
 	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
 )
+
+var NumCards int
 
 var rootCmd = &cobra.Command{
 	Use:   "loterica",
@@ -23,5 +26,6 @@ func Execute() {
 }
 
 func init() {
-
+	rootCmd.PersistentFlags().IntVarP(&NumCards, "numcards", "n", 1, "Number of cards generated")
+	viper.BindPFlag("numcards", rootCmd.PersistentFlags().Lookup("numcards"))
 }
